@@ -3,7 +3,7 @@
 import { setUser } from '@/components/context/user'
 import { checkUserAuthFx } from '@/pages/api/auth';
 import { useRouter } from 'next/navigation'
-import { useState, useRef, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react'
 
 const useRedirectByUserCheck = (isAuthPage = false) => {
   const [shouldLoadContent, setShouldLoadContent] = useState(false)
