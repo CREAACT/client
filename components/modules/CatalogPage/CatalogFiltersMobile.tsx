@@ -1,3 +1,6 @@
+'use client';
+
+
 import { useStore } from 'effector-react'
 import { ICatalogFilterMobileProps } from '@/types/catalog'
 import spinnerStyles from '@/styles/spinner/index.module.scss'

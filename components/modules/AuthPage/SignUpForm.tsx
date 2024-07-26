@@ -1,3 +1,6 @@
+'use client';
+
+
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
 import NameInput from '@/components/elements/AuthPage/NameInput'
@@ -9,7 +12,7 @@ import styles from '@/styles/auth/index.module.scss'
 import spinnerStyles from '@/styles/spinner/index.module.scss'
 import { $mode } from '@/components/context/mode'
 import { singUpFx } from '@/pages/api/auth'
-import { useStore } from 'effector-react/scope.mjs'
+import { useStore } from 'effector-react'
 
 const SignUpForm = ({ switchForm }: { switchForm: () => void }) => {
   const [spinner, setSpinner] = useState(false)

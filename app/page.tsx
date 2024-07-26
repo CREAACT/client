@@ -1,4 +1,3 @@
-'use client';
 
 import AuthPage from '@/components/templates/AuthPage/AuthPage';
 import useRedirectByUserCheck from '@/hooks/useRedirectByUserCheck';

@@ -1,3 +1,6 @@
+'use client';
+
+
 import { useStore } from 'effector-react'
 import { IFiltersPopupProps } from '@/types/catalog'
 import FilterManufacturerAccordion from './FilterManufacturerAccordion'

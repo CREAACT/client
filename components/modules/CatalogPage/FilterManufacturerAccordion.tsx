@@ -1,3 +1,6 @@
+'use client';
+
+
 import { useStore } from 'effector-react'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { IFilterManufacturerAccordionProps } from '@/types/catalog'

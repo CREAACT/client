@@ -1,3 +1,6 @@
+'use client';
+
+
 import { useStore } from 'effector-react'
 import { forwardRef, useEffect } from 'react'
 import Link from 'next/link'

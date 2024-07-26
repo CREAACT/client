@@ -1,4 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
+
+'use client';
+
 import { useStore } from 'effector-react'
 import Link from 'next/link'
 import { IBoilerPart } from '@/types/boilerparts'

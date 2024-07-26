@@ -1,3 +1,6 @@
+'use client';
+
+
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { ICatalogFiltersProps } from '@/types/catalog'
 import { useEffect, useState } from 'react'

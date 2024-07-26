@@ -1,3 +1,6 @@
+'use client';
+
+
 import { useStore } from 'effector-react'
 import { IFiltersPopupTop } from '@/types/catalog'
 import styles from '@/styles/catalog/index.module.scss'

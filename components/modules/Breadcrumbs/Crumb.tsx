@@ -1,3 +1,6 @@
+'use client';
+
+
 import { useEffect, useState } from 'react'
 import { useStore } from 'effector-react'
 import Link from 'next/link'

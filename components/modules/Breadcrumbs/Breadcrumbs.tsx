@@ -1,4 +1,7 @@
 /* eslint-disable max-len */
+'use client';
+
+
 import { useStore } from 'effector-react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'

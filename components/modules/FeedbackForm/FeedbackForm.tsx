@@ -1,3 +1,6 @@
+'use client';
+
+
 import styles from '@/styles/feedbackForm/index.module.scss'
 import { useStore } from 'effector-react'
 import emailjs from '@emailjs/browser'

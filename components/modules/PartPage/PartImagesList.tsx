@@ -1,4 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
+
+'use client';
+
 import { useStore } from 'effector-react'
 import { useState } from 'react'
 import { useMediaQuery } from '@/hooks/useMediaQuery'

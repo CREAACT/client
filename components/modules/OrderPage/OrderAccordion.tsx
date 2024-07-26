@@ -1,3 +1,6 @@
+'use client';
+
+
 import { useStore } from 'effector-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'

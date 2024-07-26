@@ -1,3 +1,6 @@
+'use client';
+
+
 import { IFilterCheckboxItem } from '@/types/catalog'
 import { useStore } from 'effector-react'
 import styles from '@/styles/catalog/index.module.scss'
