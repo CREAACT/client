@@ -1,8 +1,8 @@
 'use client';
 
 
-import { IUser } from '@/types/auth'
-import { createDomain } from 'effector';
+import { IUser } from '@/types/auth';
+import { createDomain } from 'effector-next';
 
 const user = createDomain()
 
