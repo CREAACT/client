@@ -1,3 +1,4 @@
+'use client';
 
 import { setUser } from '@/components/context/user'
 import { checkUserAuthFx } from '@/pages/api/auth'
