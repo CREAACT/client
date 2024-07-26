@@ -3,6 +3,8 @@ const nextConfig = {
     reactStrictMode: true,
     sassOptions: {
       fiber: false,
+      reactStrictMode: true,
+
     },
   }
   
