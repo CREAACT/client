@@ -3,7 +3,7 @@ import api from '../axiosClient'
 import { AxiosError } from 'axios'
 import { ISignInFx, ISignUpFx } from '@/types/auth'
 import { HTTPStatus } from '@/constans'
-import { createEffect } from 'effector-next'
+import { createEffect } from 'effector'
 
 export const singUpFx = createEffect(
   async ({ url, username, password, email }: ISignUpFx) => {
