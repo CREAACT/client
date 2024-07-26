@@ -1,6 +1,5 @@
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
-import { useStore } from 'effector-react'
 import NameInput from '@/components/elements/AuthPage/NameInput'
 import { IInputs } from '@/types/auth'
 import EmailInput from '@/components/elements/AuthPage/EmailInput'
@@ -10,6 +9,7 @@ import styles from '@/styles/auth/index.module.scss'
 import spinnerStyles from '@/styles/spinner/index.module.scss'
 import { $mode } from '@/components/context/mode'
 import { singUpFx } from '@/pages/api/auth'
+import { useStore } from 'effector-react/scope.mjs'
 
 const SignUpForm = ({ switchForm }: { switchForm: () => void }) => {
   const [spinner, setSpinner] = useState(false)
