@@ -3,6 +3,7 @@
 import { createDomain } from "effector-next";
 
 
+
 const mode = createDomain()
 
 export const setMode = mode.createEvent<string>()

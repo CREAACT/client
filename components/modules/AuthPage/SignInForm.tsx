@@ -1,14 +1,15 @@
-import { useForm } from 'react-hook-form'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-
 import styles from '@/styles/auth/index.module.scss'
 import spinnerStyles from '@/styles/spinner/index.module.scss'
+import NameInput from '@/components/elements/AuthPage/NameInput'
+import { useForm } from 'react-hook-form'
 import { IInputs } from '@/types/auth'
+import PasswordInput from '@/components/elements/AuthPage/PasswordInput'
 import { singInFx } from '@/pages/api/auth'
 import { showAuthError } from '@/utils/errors'
-import NameInput from '@/components/elements/AuthPage/NameInput'
-import PasswordInput from '@/components/elements/AuthPage/PasswordInput'
+
+
 
 const SignInForm = () => {
   const [spinner, setSpinner] = useState(false)
