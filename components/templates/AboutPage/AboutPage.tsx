@@ -1,11 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import styles from '@/styles/about/index.module.scss'
 import { $mode } from '@/components/context/mode'
 
 const AboutPage = () => {
-  const mode = useStore($mode)
+  const mode = useUnit($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
   return (

@@ -2,7 +2,7 @@
 
 'use client';
 
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import Link from 'next/link'
 import { IBoilerPart } from '@/types/boilerparts'
 import { formatPrice } from '@/utils/common'
@@ -17,11 +17,11 @@ import { $mode } from '@/components/context/mode'
 import CartHoverCheckedSvg from '@/components/elements/CartHoverCheckedSvg/CartHoverCheckedSvg'
 
 const CatalogItem = ({ item }: { item: IBoilerPart }) => {
-  const mode = useStore($mode)
-  const user = useStore($user)
-  const shoppingCart = useStore($shoppingCart)
+  const mode = useUnit($mode)
+  const user = useUnit($user)
+  const shoppingCart = useUnit($shoppingCart)
   const isInCart = shoppingCart.some((cartItem) => cartItem.partId === item.id)
-  const spinner = useStore(removeFromCartFx.pending)
+  const spinner = useUnit(removeFromCartFx.pending)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
   const toggleToCart = () => toggleCartItem(user.username, item.id, isInCart)

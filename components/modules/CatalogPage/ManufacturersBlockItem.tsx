@@ -1,7 +1,7 @@
 'use client';
 
 
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import { motion } from 'framer-motion'
 import {
   IFilterCheckboxItem,
@@ -15,7 +15,7 @@ const ManufacturersBlockItem = ({
   item,
   event,
 }: IManufacturersBlockItemProps) => {
-  const mode = useStore($mode)
+  const mode = useUnit($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
   const removeFilter = () =>

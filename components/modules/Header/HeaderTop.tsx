@@ -1,5 +1,6 @@
+'use client';
 import Link from 'next/link'
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import ModeToggler from '@/components/elements/ModeToggler/ModeToggler'
 import styles from '@/styles/header/index.module.scss'
@@ -11,7 +12,7 @@ import ProfileDropdown from './ProfileDropdown'
 const HeaderTop = () => {
   const isMedia950 = useMediaQuery(950)
   const { toggleOpen, open, closePopup } = usePopup()
-  const mode = useStore($mode)
+  const mode = useUnit($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
   return (

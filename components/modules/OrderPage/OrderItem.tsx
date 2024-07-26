@@ -2,7 +2,7 @@
 
 'use client';
 
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import Link from 'next/link'
 import { IShoppingCartItem } from '@/types/shopping-cart'
 import { usePrice } from '@/hooks/usePrice'
@@ -14,7 +14,7 @@ import styles from '@/styles/order/index.module.scss'
 import { $mode } from '@/components/context/mode'
 
 const OrderItem = ({ item }: { item: IShoppingCartItem }) => {
-  const mode = useStore($mode)
+  const mode = useUnit($mode)
   const isMedia1160 = useMediaQuery(1160)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
   const spinnerDarkModeClass =

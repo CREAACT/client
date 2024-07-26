@@ -1,7 +1,7 @@
 'use client';
 
 
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import { Range, getTrackBackground } from 'react-range'
 import styles from '@/styles/catalog/index.module.scss'
 import { IPriceRangeProps } from '@/types/catalog'
@@ -16,7 +16,7 @@ const PriceRange = ({
   setPriceRange,
   setIsPriceRangeChanged,
 }: IPriceRangeProps) => {
-  const mode = useStore($mode)
+  const mode = useUnit($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
   const handlePriceRangeChange = (values: number[]) => {

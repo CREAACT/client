@@ -1,4 +1,7 @@
-import { useStore } from 'effector-react'
+'use client';
+
+
+import { useUnit } from 'effector-react'
 import { toast } from 'react-toastify'
 import { useEffect } from 'react'
 import PartImagesList from '@/components/modules/PartPage/PartImagesList'
@@ -22,16 +25,16 @@ import { removeFromCartFx } from '@/pages/api/shopping-cart'
 import { getBoilerPartsFx } from '@/pages/boilerParts'
 
 const PartPage = () => {
-  const mode = useStore($mode)
-  const user = useStore($user)
+  const mode = useUnit($mode)
+  const user = useUnit($user)
   const isMobile = useMediaQuery(850)
-  const boilerPart = useStore($boilerPart)
-  const boilerParts = useStore($boilerParts)
-  const cartItems = useStore($shoppingCart)
+  const boilerPart = useUnit($boilerPart)
+  const boilerParts = useUnit($boilerParts)
+  const cartItems = useUnit($shoppingCart)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
   const isInCart = cartItems.some((item) => item.partId === boilerPart.id)
-  const spinnerToggleCart = useStore(removeFromCartFx.pending)
-  const spinnerSlider = useStore(getBoilerPartsFx.pending)
+  const spinnerToggleCart = useUnit(removeFromCartFx.pending)
+  const spinnerSlider = useUnit(getBoilerPartsFx.pending)
 
   useEffect(() => {
     loadBoilerPart()

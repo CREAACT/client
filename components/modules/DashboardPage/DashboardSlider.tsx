@@ -3,7 +3,7 @@
 'use client';
 
 import Slider from 'react-slick'
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import Link from 'next/link'
@@ -24,7 +24,7 @@ const DashboardSlider = ({
   const isMedia1366 = useMediaQuery(1366)
   const isMedia800 = useMediaQuery(800)
   const isMedia560 = useMediaQuery(560)
-  const mode = useStore($mode)
+  const mode = useUnit($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
   useEffect(() => {

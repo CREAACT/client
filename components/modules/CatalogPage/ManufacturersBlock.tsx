@@ -1,7 +1,7 @@
 'use client';
 
 
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { IManufacturersBlockProps } from '@/types/catalog'
 import styles from '@/styles/catalog/index.module.scss'
@@ -13,7 +13,7 @@ const ManufacturersBlock = ({
   manufacturersList,
   event,
 }: IManufacturersBlockProps) => {
-  const mode = useStore($mode)
+  const mode = useUnit($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
   const checkedItems = manufacturersList.filter((item) => item.checked)
 

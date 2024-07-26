@@ -1,4 +1,7 @@
-import { useStore } from 'effector-react'
+'use client';
+
+
+import { useUnit } from 'effector-react'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 
@@ -11,7 +14,7 @@ const ShippingPayment = () => {
   const [tab2, setTab2] = useState(false)
   const [tab3, setTab3] = useState(false)
   const [tab4, setTab4] = useState(false)
-  const mode = useStore($mode)
+  const mode = useUnit($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
   const handleTab1 = () => {

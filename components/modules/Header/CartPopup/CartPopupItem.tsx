@@ -2,7 +2,7 @@
 
 'use client';
 
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import Link from 'next/link'
 import { IShoppingCartItem } from '../../../../types/shopping-cart'
 import { formatPrice } from '@/utils/common'
@@ -14,7 +14,7 @@ import CartItemCounter from '@/components/elements/CartItemCounter/CartItemCount
 import { usePrice } from '@/hooks/usePrice'
 
 const CartPopupItem = ({ item }: { item: IShoppingCartItem }) => {
-  const mode = useStore($mode)
+  const mode = useUnit($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
   const spinnerDarkModeClass =
     mode === 'dark' ? '' : `${spinnerStyles.dark_mode}`

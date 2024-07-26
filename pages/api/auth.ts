@@ -1,3 +1,6 @@
+'use client';
+
+
 import { toast } from 'react-toastify'
 import api from '../axiosClient'
 import { AxiosError } from 'axios'

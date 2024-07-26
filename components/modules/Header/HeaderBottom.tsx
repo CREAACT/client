@@ -2,7 +2,7 @@
 
 'use client';
 
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import Link from 'next/link'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
@@ -16,7 +16,7 @@ import { setDisableCart } from '@/components/context/shopping-cart'
 
 const HeaderBottom = () => {
   const isMedia950 = useMediaQuery(950)
-  const mode = useStore($mode)
+  const mode = useUnit($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
   const router = useRouter()
 

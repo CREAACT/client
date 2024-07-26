@@ -2,7 +2,7 @@
 'use client';
 
 
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { ParsedUrlQuery } from 'querystring'
@@ -24,7 +24,7 @@ const Breadcrumbs = ({
   getDefaultTextGenerator: (arg0: string, href: string) => string
 }) => {
   const router = useRouter()
-  const mode = useStore($mode)
+  const mode = useUnit($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
   const breadcrumbs = useMemo(

@@ -1,4 +1,7 @@
 /* eslint-disable max-len */
+
+'use client';
+
 import { createEffect } from 'effector-next'
 import { IGeolocation } from '../../types/common'
 import api from '../axiosClient'

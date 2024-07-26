@@ -1,3 +1,6 @@
+'use client';
+
+
 import { $mode, setMode } from '@/components/context/mode'
 import { useStore } from 'effector-react'
 import { useEffect } from 'react'

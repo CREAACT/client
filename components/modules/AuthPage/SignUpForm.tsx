@@ -12,7 +12,7 @@ import styles from '@/styles/auth/index.module.scss'
 import spinnerStyles from '@/styles/spinner/index.module.scss'
 import { $mode } from '@/components/context/mode'
 import { singUpFx } from '@/pages/api/auth'
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 
 const SignUpForm = ({ switchForm }: { switchForm: () => void }) => {
   const [spinner, setSpinner] = useState(false)
@@ -22,7 +22,7 @@ const SignUpForm = ({ switchForm }: { switchForm: () => void }) => {
     handleSubmit,
     resetField,
   } = useForm<IInputs>()
-  const mode = useStore($mode)
+  const mode = useUnit($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
   const onSubmit = async (data: IInputs) => {

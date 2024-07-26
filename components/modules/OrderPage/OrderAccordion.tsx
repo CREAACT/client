@@ -1,7 +1,7 @@
 'use client';
 
 
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
@@ -19,9 +19,9 @@ const OrderAccordion = ({
   setOrderIsReady,
   showDoneIcon,
 }: IOrderAccordionProps) => {
-  const mode = useStore($mode)
-  const shoppingCart = useStore($shoppingCart)
-  const totalPrice = useStore($totalPrice)
+  const mode = useUnit($mode)
+  const shoppingCart = useUnit($shoppingCart)
+  const totalPrice = useUnit($totalPrice)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
   const isMedia550 = useMediaQuery(550)
   const [expanded, setExpanded] = useState(true)

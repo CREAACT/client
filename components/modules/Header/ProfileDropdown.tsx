@@ -1,7 +1,7 @@
 'use client';
 
 
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import { forwardRef } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { withClickOutside } from '../../../utils/withClickOutside'
@@ -16,8 +16,8 @@ import ProfileSvg from '@/components/elements/ProfileSvg/ProfileSvg'
 
 const ProfileDropDown = forwardRef<HTMLDivElement, IWrappedComponentProps>(
   ({ open, setOpen }, ref) => {
-    const mode = useStore($mode)
-    const user = useStore($user)
+    const mode = useUnit($mode)
+    const user = useUnit($user)
     const router = useRouter()
     const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 

@@ -2,7 +2,7 @@
 
 'use client';
 
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import { useState } from 'react'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import PartImagesItem from './PartImagesItem'
@@ -11,7 +11,7 @@ import { $boilerPart } from '@/components/context/boilerPart'
 import PartSlider from './PartSlider'
 
 const PartImagesList = () => {
-  const boilerPart = useStore($boilerPart)
+  const boilerPart = useUnit($boilerPart)
   const isMobile = useMediaQuery(850)
   const images = boilerPart.images
     ? (JSON.parse(boilerPart.images) as string[])

@@ -1,3 +1,6 @@
+'use client';
+
+
 import { createEffect } from 'effector-next'
 import api from '../axiosClient'
 import { IAddToCartFx, IUpdateCartItemFx } from '@/types/shopping-cart'

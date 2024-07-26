@@ -1,7 +1,7 @@
 'use client';
 
 
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import { forwardRef, useEffect } from 'react'
 import Link from 'next/link'
 import { toast } from 'react-toastify'
@@ -20,11 +20,11 @@ import ShoppingCartSvg from '@/components/elements/ShoppingCartSvg/ShoppingCartS
 
 const CartPopup = forwardRef<HTMLDivElement, IWrappedComponentProps>(
   ({ open, setOpen }, ref) => {
-    const mode = useStore($mode)
-    const user = useStore($user)
-    const totalPrice = useStore($totalPrice)
-    const disableCart = useStore($disableCart)
-    const shoppingCart = useStore($shoppingCart)
+    const mode = useUnit($mode)
+    const user = useUnit($user)
+    const totalPrice = useUnit($totalPrice)
+    const disableCart = useUnit($disableCart)
+    const shoppingCart = useUnit($shoppingCart)
     const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
     const toggleCartDropDown = () => {

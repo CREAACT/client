@@ -1,14 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
 
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import Accordion from '@/components/elements/Accordion/Accordion'
 import styles from '@/styles/part/index.module.scss'
 import { $mode } from '@/components/context/mode'
 import { IPartAccordionProps } from '@/types/part'
 
 const PartAccordion = ({ children, title }: IPartAccordionProps) => {
-  const mode = useStore($mode)
+  const mode = useUnit($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
   const handleExpandAccordion = (expanded: boolean) => {

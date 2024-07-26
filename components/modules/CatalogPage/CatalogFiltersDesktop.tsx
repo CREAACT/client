@@ -1,7 +1,7 @@
 'use client';
 
 
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 
 import Accordion from '@/components/elements/Accordion/Accordion'
 import { ICatalogFilterDesktopProps } from '@/types/catalog'
@@ -21,9 +21,9 @@ const CatalogFiltersDesktop = ({
   resetFilters,
   applyFilters,
 }: ICatalogFilterDesktopProps) => {
-  const mode = useStore($mode)
-  const boilerManufacturers = useStore($boilerManufacturers)
-  const partsManufacturers = useStore($partsManufacturers)
+  const mode = useUnit($mode)
+  const boilerManufacturers = useUnit($boilerManufacturers)
+  const partsManufacturers = useUnit($partsManufacturers)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
   return (

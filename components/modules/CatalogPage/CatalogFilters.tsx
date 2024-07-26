@@ -6,7 +6,7 @@ import { ICatalogFiltersProps } from '@/types/catalog'
 import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
 
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import { useRouter } from 'next/router'
 import { getQueryParamOnFirstRender } from '@/utils/common'
 import { checkQueryParams, updateParamsAndFiltersFromQuery, updateParamsAndFilters } from '@/utils/catalog'
@@ -29,8 +29,8 @@ const CatalogFilters = ({
 }: ICatalogFiltersProps) => {
   const isMobile = useMediaQuery(820)
   const [spinner, setSpinner] = useState(false)
-  const boilerManufacturers = useStore($boilerManufacturers)
-  const partsManufacturers = useStore($partsManufacturers)
+  const boilerManufacturers = useUnit($boilerManufacturers)
+  const partsManufacturers = useUnit($partsManufacturers)
   const router = useRouter()
 
   useEffect(() => {

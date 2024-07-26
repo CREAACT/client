@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { toast } from 'react-toastify'
 import { useCallback, useEffect, useState, } from 'react'
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 
 import Layout from '@/components/layout/Layout'
 import useRedirectByUserCheck from '@/hooks/useRedirectByUserCheck'
@@ -17,7 +17,7 @@ import PartPage from '@/components/templates/CatalogPage/PartPage'
 
 function CatalogPartPage({ query }: { query: IQueryParams }) {
   const { shouldLoadContent } = useRedirectByUserCheck()
-  const boilerPart = useStore($boilerPart)
+  const boilerPart = useUnit($boilerPart)
   const [error, setError] = useState(false)
   const router = useRouter()
   const getDefaultTextGenerator = useCallback(
