@@ -3,7 +3,7 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { toast } from 'react-toastify'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState, } from 'react'
 import { useStore } from 'effector-react'
 
 import Layout from '@/components/layout/Layout'
