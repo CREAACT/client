@@ -1,6 +1,6 @@
 import { createEffect } from "effector"
 import { toast } from 'react-toastify'
-import { ISignUpFx, ISignInFx } from '../../types/auth'
+import { ISignUpFx, ISignInFx } from '@/types/auth'
 import api from './axiosClient'
 import { AxiosError } from 'axios'
 import { HTTPStatus } from '@/constans'

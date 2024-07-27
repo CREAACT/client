@@ -1,3 +1,5 @@
+'use client'
+
 import Head from 'next/head'
 import { useCallback } from 'react'
 import Layout from '@/components/layout/Layout'
