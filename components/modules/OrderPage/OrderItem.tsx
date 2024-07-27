@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
-"use client"
+"use client";
 
 import { useUnit } from 'effector-react'
 import Link from 'next/link'
