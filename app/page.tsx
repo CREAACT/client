@@ -1,6 +1,7 @@
 import AuthPage from '@/components/templates/AuthPage/AuthPage'
 import useRedirectByUserCheck from '@/hooks/useRedirectByUserCheck'
-import Head from 'next/head'
+import Head from 'next/dist/shared/lib/head'
+
 
 function Auth() {
   const { shouldLoadContent } = useRedirectByUserCheck(true)

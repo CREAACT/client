@@ -43,6 +43,7 @@ const CatalogFilters = ({
     applyFiltersFromQuery()
   }, [])
 
+
   const applyFiltersFromQuery = async () => {
     try {
       const {
