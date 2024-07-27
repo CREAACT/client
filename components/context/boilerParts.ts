@@ -4,7 +4,7 @@
 import { IBoilerParts } from '@/types/boilerparts'
 import { IFilterCheckboxItem } from '@/types/catalog'
 import { boilerManufacturers, partsManufacturers } from '@/utils/catalog'
-import { createDomain } from 'effector'
+import { createDomain } from 'effector-next'
 
 const boilerParts = createDomain()
 

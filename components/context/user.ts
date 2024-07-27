@@ -2,7 +2,7 @@
 
 
 import { IUser } from '@/types/auth';
-import { createDomain } from 'effector';
+import { createDomain } from 'effector-next';
 
 const user = createDomain()
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { createDomain } from "effector";
+import { createDomain } from "effector-next";
 
 
 
