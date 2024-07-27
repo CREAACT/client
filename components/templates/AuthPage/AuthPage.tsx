@@ -6,7 +6,7 @@ import SignUpForm from '@/components/modules/AuthPage/SignUpForm'
 import SignInForm from '@/components/modules/AuthPage/SignInForm'
 import styles from '@/styles/auth/index.module.scss'
 import ModeToggler from '@/components/elements/ModeToggler/ModeToggler'
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import { $mode } from '@/context/mode'
 
 const AuthPage = () => {
@@ -18,7 +18,7 @@ const AuthPage = () => {
   const switchCircle2 = useRef() as MutableRefObject<HTMLDivElement>
   const aContainer = useRef() as MutableRefObject<HTMLDivElement>
   const bContainer = useRef() as MutableRefObject<HTMLDivElement>
-  const mode = useStore($mode)
+  const mode = useUnit($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
   const switchForm = () => {

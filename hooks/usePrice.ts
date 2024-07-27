@@ -1,4 +1,4 @@
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import { useEffect, useState } from 'react'
 import { removeItemFromCart, updateTotalPrice } from '@/utils/shopping-cart'
 import { removeFromCartFx } from '@/pages/api/shopping-cart'
@@ -8,7 +8,7 @@ export const usePrice = (
   partId: number,
   initialPrice: number
 ) => {
-  const spinner = useStore(removeFromCartFx.pending)
+  const spinner = useUnit(removeFromCartFx.pending)
   const [price, setPrice] = useState(initialPrice)
 
   useEffect(() => {

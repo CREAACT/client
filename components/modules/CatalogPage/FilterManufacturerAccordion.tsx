@@ -1,4 +1,4 @@
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import { $mode } from '@/context/mode'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { IFilterManufacturerAccordionProps } from '@/types/catalog'
@@ -12,7 +12,7 @@ const FilterManufacturerAccordion = ({
   updateManufacturer,
   setManufacturer,
 }: IFilterManufacturerAccordionProps) => {
-  const mode = useStore($mode)
+  const mode = useUnit($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
   const isMobile = useMediaQuery(820)
 

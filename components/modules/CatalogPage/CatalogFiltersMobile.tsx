@@ -1,4 +1,4 @@
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import { $mode } from '@/context/mode'
 import { ICatalogFilterMobileProps } from '@/types/catalog'
 import spinnerStyles from '@/styles/spinner/index.module.scss'
@@ -29,10 +29,10 @@ const CatalogFiltersMobile = ({
   priceRange,
   setPriceRange,
 }: ICatalogFilterMobileProps) => {
-  const mode = useStore($mode)
+  const mode = useUnit($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
-  const boilerManufacturers = useStore($boilerManufacturers)
-  const partsManufacturers = useStore($partsManufacturers)
+  const boilerManufacturers = useUnit($boilerManufacturers)
+  const partsManufacturers = useUnit($partsManufacturers)
   const [openBoilers, setOpenBoilers] = useState(false)
   const [openParts, setOpenParts] = useState(false)
   const handleOpenBoilers = () => setOpenBoilers(true)

@@ -9,7 +9,7 @@ import {
   setBoilerManufacturersFromQuery,
   setPartsManufacturersFromQuery,
 } from '@/context/boilerParts'
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import { useRouter } from 'next/router'
 import { getQueryParamOnFirstRender } from '@/utils/common'
 import CatalogFiltersMobile from './CatalogFiltersMobile'
@@ -33,8 +33,8 @@ const CatalogFilters = ({
 }: ICatalogFiltersProps) => {
   const isMobile = useMediaQuery(820)
   const [spinner, setSpinner] = useState(false)
-  const boilerManufacturers = useStore($boilerManufacturers)
-  const partsManufacturers = useStore($partsManufacturers)
+  const boilerManufacturers = useUnit($boilerManufacturers)
+  const partsManufacturers = useUnit($partsManufacturers)
   const router = useRouter()
 
   useEffect(() => {

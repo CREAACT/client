@@ -13,7 +13,7 @@ import {
 } from '@/context/boilerParts'
 import { $mode } from '@/context/mode'
 import styles from '@/styles/catalog/index.module.scss'
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import { AnimatePresence } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
@@ -30,11 +30,11 @@ import FilterSvg from '@/components/elements/FilterSvg/FilterSvg'
 import { getBoilerPartsFx } from '@/pages/api/boilerParts'
 
 const CatalogPage = ({ query }: { query: IQueryParams }) => {
-  const mode = useStore($mode)
-  const boilerManufacturers = useStore($boilerManufacturers)
-  const partsManufacturers = useStore($partsManufacturers)
-  const filteredBoilerParts = useStore($filteredBoilerParts)
-  const boilerParts = useStore($boilerParts)
+  const mode = useUnit($mode)
+  const boilerManufacturers = useUnit($boilerManufacturers)
+  const partsManufacturers = useUnit($partsManufacturers)
+  const filteredBoilerParts = useUnit($filteredBoilerParts)
+  const boilerParts = useUnit($boilerParts)
   const [spinner, setSpinner] = useState(false)
   const [priceRange, setPriceRange] = useState([1000, 9000])
   const [isFilterInQuery, setIsFilterInQuery] = useState(false)

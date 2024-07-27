@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import Link from 'next/link'
 import { IShoppingCartItem } from '@/types/shopping-cart'
 import { usePrice } from '@/hooks/usePrice'
@@ -11,7 +11,7 @@ import spinnerStyles from '@/styles/spinner/index.module.scss'
 import styles from '@/styles/order/index.module.scss'
 
 const OrderItem = ({ item }: { item: IShoppingCartItem }) => {
-  const mode = useStore($mode)
+  const mode = useUnit($mode)
   const isMedia1160 = useMediaQuery(1160)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
   const spinnerDarkModeClass =

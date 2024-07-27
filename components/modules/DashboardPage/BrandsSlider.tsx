@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Slider from 'react-slick'
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import { useEffect } from 'react'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -12,7 +12,7 @@ import styles from '@/styles/dashboard/index.module.scss'
 
 const BrandsSlider = () => {
   const isMedia768 = useMediaQuery(768)
-  const mode = useStore($mode)
+  const mode = useUnit($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
   const brandItems = [

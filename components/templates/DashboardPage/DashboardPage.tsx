@@ -3,7 +3,7 @@ import { toast } from 'react-toastify'
 import BrandsSlider from '@/components/modules/DashboardPage/BrandsSlider'
 import { IBoilerParts } from '@/types/boilerparts'
 import styles from '@/styles/dashboard/index.module.scss'
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import { $mode } from '@/context/mode'
 import DashboardSlider from '@/components/modules/DashboardPage/DashboardSlider'
 import { $shoppingCart } from '@/context/shopping-cart'
@@ -17,9 +17,9 @@ const DashboardPage = () => {
     {} as IBoilerParts
   )
   const [spinner, setSpinner] = useState(false)
-  const shoppingCart = useStore($shoppingCart)
+  const shoppingCart = useUnit($shoppingCart)
   const [showAlert, setShowAlert] = useState(!!shoppingCart.length)
-  const mode = useStore($mode)
+  const mode = useUnit($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
   useEffect(() => {

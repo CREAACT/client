@@ -1,4 +1,4 @@
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import { toast } from 'react-toastify'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
@@ -18,15 +18,15 @@ import { makePaymentFx, checkPaymentFx } from '@/pages/api/payment'
 import { removeFromCartFx } from '@/pages/api/shopping-cart'
 
 const OrderPage = () => {
-  const mode = useStore($mode)
-  const user = useStore($user)
-  const userCity = useStore($userCity)
-  const shoppingCart = useStore($shoppingCart)
-  const totalPrice = useStore($totalPrice)
+  const mode = useUnit($mode)
+  const user = useUnit($user)
+  const userCity = useUnit($userCity)
+  const shoppingCart = useUnit($shoppingCart)
+  const totalPrice = useUnit($totalPrice)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
   const [orderIsReady, setOrderIsReady] = useState(false)
   const [agreement, setAgreement] = useState(false)
-  const spinner = useStore(makePaymentFx.pending)
+  const spinner = useUnit(makePaymentFx.pending)
   const router = useRouter()
 
   const handleAgreementChange = () => setAgreement(!agreement)

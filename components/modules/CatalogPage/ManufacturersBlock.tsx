@@ -1,4 +1,4 @@
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import { $mode } from '@/context/mode'
 import { AnimatePresence, motion } from 'framer-motion'
 import { IManufacturersBlockProps } from '@/types/catalog'
@@ -10,7 +10,7 @@ const ManufacturersBlock = ({
   manufacturersList,
   event,
 }: IManufacturersBlockProps) => {
-  const mode = useStore($mode)
+  const mode = useUnit($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
   const checkedItems = manufacturersList.filter((item) => item.checked)
 

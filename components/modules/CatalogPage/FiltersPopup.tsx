@@ -1,4 +1,4 @@
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import { $mode } from '@/context/mode'
 import { IFiltersPopupProps } from '@/types/catalog'
 import FiltersPopupTop from './FiltersPopupTop'
@@ -16,7 +16,7 @@ const FiltersPopup = ({
   title,
   manufacturersList,
 }: IFiltersPopupProps) => {
-  const mode = useStore($mode)
+  const mode = useUnit($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
   return (

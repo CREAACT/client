@@ -1,5 +1,5 @@
 /* eslint-disable indent */
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import { useEffect, useState } from 'react'
 import Select from 'react-select'
 import { $mode } from '@/context/mode'
@@ -25,8 +25,8 @@ const FilterSelect = ({
 }: {
   setSpinner: (arg0: boolean) => void
 }) => {
-  const mode = useStore($mode)
-  const boilerParts = useStore($boilerParts)
+  const mode = useUnit($mode)
+  const boilerParts = useUnit($boilerParts)
   const [categoryOption, setCategoryOption] = useState<SelectOptionType>(null)
   const router = useRouter()
 

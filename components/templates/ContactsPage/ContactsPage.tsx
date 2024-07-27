@@ -1,4 +1,4 @@
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import { $mode } from '@/context/mode'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import styles from '@/styles/contacts/index.module.scss'
@@ -6,7 +6,7 @@ import MailSvg from '@/components/elements/MailSvg/MailSvg'
 import FeedbackForm from '@/components/modules/FeedbackForm/FeedbackForm'
 
 const ContactsPage = ({ isWholesaleBuyersPage = false }) => {
-  const mode = useStore($mode)
+  const mode = useUnit($mode)
   const isMobile560 = useMediaQuery(560)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 

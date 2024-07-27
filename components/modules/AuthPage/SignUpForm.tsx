@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import NameInput from '@/components/elements/AuthPage/NameInput'
 import { IInputs } from '@/types/auth'
 import { $mode } from '@/context/mode'
@@ -19,7 +19,7 @@ const SignUpForm = ({ switchForm }: { switchForm: () => void }) => {
     handleSubmit,
     resetField,
   } = useForm<IInputs>()
-  const mode = useStore($mode)
+  const mode = useUnit($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
   const onSubmit = async (data: IInputs) => {

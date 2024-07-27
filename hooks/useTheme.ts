@@ -1,9 +1,9 @@
 import { $mode, setMode } from '@/context/mode'
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import { useEffect } from 'react'
 
 export const useTheme = () => {
-  const mode = useStore($mode)
+  const mode = useUnit($mode)
 
   const toggleTheme = () => {
     if (mode === 'dark') {

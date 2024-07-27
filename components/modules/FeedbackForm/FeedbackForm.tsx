@@ -1,6 +1,6 @@
 import { $mode } from '@/context/mode'
 import styles from '@/styles/feedbackForm/index.module.scss'
-import { useStore } from 'effector-react'
+import { useUnit } from 'effector-react'
 import emailjs from '@emailjs/browser'
 import NameInput from './NameInput'
 import { useForm } from 'react-hook-form'
@@ -13,7 +13,7 @@ import spinnerStyles from '@/styles/spinner/index.module.scss'
 import { toast } from 'react-toastify'
 
 const FeedbackForm = () => {
-  const mode = useStore($mode)
+  const mode = useUnit($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
   const {
     register,
