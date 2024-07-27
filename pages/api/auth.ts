@@ -1,4 +1,4 @@
-import { createEffect } from 'effector-next'
+import { createEffect } from "effector"
 import { toast } from 'react-toastify'
 import { ISignUpFx, ISignInFx } from '../../types/auth'
 import api from './axiosClient'

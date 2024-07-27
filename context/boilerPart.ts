@@ -1,5 +1,5 @@
 import { IBoilerPart } from '@/types/boilerparts'
-import { createDomain } from 'effector-next'
+import { createDomain } from "effector"
 
 const boilerPart = createDomain()
 

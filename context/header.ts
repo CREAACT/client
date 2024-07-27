@@ -1,4 +1,4 @@
-import { createDomain } from 'effector-next'
+import { createDomain } from "effector"
 
 const header = createDomain()
 
