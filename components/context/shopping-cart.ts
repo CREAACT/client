@@ -1,7 +1,7 @@
 'use client';
 
 import { IShoppingCartItem } from '@/types/shopping-cart'
-import { createDomain } from 'effector-next'
+import { createDomain } from 'effector'
 
 const shoppingCart = createDomain()
 
