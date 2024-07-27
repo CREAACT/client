@@ -1,6 +1,6 @@
 'use client';
 
-import { createEffect } from 'effector-next'
+import { createEffect } from 'effector'
 import api from './axiosClient'
 import { toast } from 'react-toastify'
 
