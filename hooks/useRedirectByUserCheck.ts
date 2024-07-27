@@ -1,6 +1,5 @@
 'use client';
 
-
 import { setUser } from '@/context/user'
 import { checkUserAuthFx } from '@/pages/api/auth'
 import { useRouter } from 'next/navigation'
