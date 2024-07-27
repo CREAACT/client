@@ -1,3 +1,5 @@
+'use client'
+
 import { MutableRefObject, useRef } from 'react'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import SignUpForm from '@/components/modules/AuthPage/SignUpForm'
