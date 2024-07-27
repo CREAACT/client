@@ -1,6 +1,3 @@
-'use client';
-
-
 import { useStore } from 'effector-react'
 import { useEffect, useState } from 'react'
 import { removeItemFromCart, updateTotalPrice } from '@/utils/shopping-cart'

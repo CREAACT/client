@@ -1,12 +1,9 @@
-'use client';
-
-
+import { createEffect } from 'effector-next'
 import { toast } from 'react-toastify'
-import api from '../axiosClient'
+import { ISignUpFx, ISignInFx } from '../../types/auth'
+import api from './axiosClient'
 import { AxiosError } from 'axios'
-import { ISignInFx, ISignUpFx } from '@/types/auth'
 import { HTTPStatus } from '@/constans'
-import { createEffect } from 'effector'
 
 export const singUpFx = createEffect(
   async ({ url, username, password, email }: ISignUpFx) => {
@@ -17,7 +14,7 @@ export const singUpFx = createEffect(
       return
     }
 
-    toast.success('Регистрация прошла успешно!')
+    toast.success('Регистрация прощла успешно!')
 
     return data
   }

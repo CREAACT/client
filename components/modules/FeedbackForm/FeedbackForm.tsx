@@ -1,22 +1,19 @@
-'use client';
-
-
+import { $mode } from '@/context/mode'
 import styles from '@/styles/feedbackForm/index.module.scss'
-import { useUnit } from 'effector-react'
+import { useStore } from 'effector-react'
 import emailjs from '@emailjs/browser'
 import NameInput from './NameInput'
 import { useForm } from 'react-hook-form'
+import { FeedbackInputs } from '@/types/feedbackForm'
+import PhoneInput from './PhoneInput'
 import EmailInput from './EmailInput'
+import MessageInput from './MessageInput'
 import { MutableRefObject, useRef, useState } from 'react'
 import spinnerStyles from '@/styles/spinner/index.module.scss'
 import { toast } from 'react-toastify'
-import { $mode } from '@/components/context/mode'
-import MessageInput from './MessageInput'
-import PhoneInput from './PhoneInput'
-import { FeedbackInputs } from '@/types/feedbackForm'
 
 const FeedbackForm = () => {
-  const mode = useUnit($mode)
+  const mode = useStore($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
   const {
     register,
@@ -30,10 +27,10 @@ const FeedbackForm = () => {
     setSpinner(true)
     emailjs
       .sendForm(
-        'service_ci7af0t',
-        'template_f5dwns4',
+        'service_4406d2p',
+        'template_88thtrg',
         formRef.current,
-        'AbMM4qoilBzuXvx8c'
+        'ARtfb1bp4SELm6yXa'
       )
       .then((result) => {
         setSpinner(false)

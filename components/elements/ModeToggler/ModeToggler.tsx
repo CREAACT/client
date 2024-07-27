@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 
 import styles from '@/styles/auth/index.module.scss'
 import { useTheme } from '@/hooks/useTheme'
-import { $mode } from '@/components/context/mode'
+import { $mode } from '@/context/mode'
 
 const ModeToggler = () => {
   const { toggleTheme } = useTheme()

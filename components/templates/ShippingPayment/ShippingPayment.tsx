@@ -1,20 +1,21 @@
-'use client';
-
-
-import { useUnit } from 'effector-react'
+import { useStore } from 'effector-react'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-
+import { $mode } from '@/context/mode'
+import {
+  tab1Text,
+  tab2Text,
+  tab3Text,
+  tab4Text,
+} from '@/utils/shipping-payment'
 import styles from '@/styles/shippingPayment/index.module.scss'
-import { $mode } from '@/components/context/mode'
-import { tab1Text, tab2Text, tab3Text, tab4Text } from '@/utils/shipping-payment'
 
 const ShippingPayment = () => {
   const [tab1, setTab1] = useState(true)
   const [tab2, setTab2] = useState(false)
   const [tab3, setTab3] = useState(false)
   const [tab4, setTab4] = useState(false)
-  const mode = useUnit($mode)
+  const mode = useStore($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
   const handleTab1 = () => {

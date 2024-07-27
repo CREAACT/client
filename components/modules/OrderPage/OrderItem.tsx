@@ -1,20 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
-
-'use client';
-
-import { useUnit } from 'effector-react'
+import { useStore } from 'effector-react'
 import Link from 'next/link'
 import { IShoppingCartItem } from '@/types/shopping-cart'
 import { usePrice } from '@/hooks/usePrice'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
+import { $mode } from '@/context/mode'
 import CartItemCounter from '@/components/elements/CartItemCounter/CartItemCounter'
 import { formatPrice } from '@/utils/common'
 import spinnerStyles from '@/styles/spinner/index.module.scss'
 import styles from '@/styles/order/index.module.scss'
-import { $mode } from '@/components/context/mode'
 
 const OrderItem = ({ item }: { item: IShoppingCartItem }) => {
-  const mode = useUnit($mode)
+  const mode = useStore($mode)
   const isMedia1160 = useMediaQuery(1160)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
   const spinnerDarkModeClass =

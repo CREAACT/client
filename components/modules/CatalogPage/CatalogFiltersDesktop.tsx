@@ -1,16 +1,19 @@
-'use client';
-
-
-import { useUnit } from 'effector-react'
-
+import { useStore } from 'effector-react'
+import {
+  $boilerManufacturers,
+  $partsManufacturers,
+  setBoilerManufacturers,
+  setPartsManufacturers,
+  updateBoilerManufacturer,
+  updatePartsManufacturer,
+} from '@/context/boilerParts'
+import { $mode } from '@/context/mode'
+import FilterManufacturerAccordion from './FilterManufacturerAccordion'
 import Accordion from '@/components/elements/Accordion/Accordion'
+import PriceRange from './PriceRange'
 import { ICatalogFilterDesktopProps } from '@/types/catalog'
 import spinnerStyles from '@/styles/spinner/index.module.scss'
 import styles from '@/styles/catalog/index.module.scss'
-import { $mode } from '@/components/context/mode'
-import { $boilerManufacturers, $partsManufacturers, updateBoilerManufacturer, setBoilerManufacturers, updatePartsManufacturer, setPartsManufacturers } from '@/components/context/boilerParts'
-import PriceRange from './PriceRange'
-import FilterManufacturerAccordion from './FilterManufacturerAccordion'
 
 const CatalogFiltersDesktop = ({
   priceRange,
@@ -21,9 +24,9 @@ const CatalogFiltersDesktop = ({
   resetFilters,
   applyFilters,
 }: ICatalogFilterDesktopProps) => {
-  const mode = useUnit($mode)
-  const boilerManufacturers = useUnit($boilerManufacturers)
-  const partsManufacturers = useUnit($partsManufacturers)
+  const mode = useStore($mode)
+  const boilerManufacturers = useStore($boilerManufacturers)
+  const partsManufacturers = useStore($partsManufacturers)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
   return (

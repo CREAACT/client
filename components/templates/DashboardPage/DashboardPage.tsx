@@ -1,18 +1,15 @@
-'use client';
-
-
 import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
 import BrandsSlider from '@/components/modules/DashboardPage/BrandsSlider'
 import { IBoilerParts } from '@/types/boilerparts'
 import styles from '@/styles/dashboard/index.module.scss'
-import { useUnit } from 'effector-react'
+import { useStore } from 'effector-react'
+import { $mode } from '@/context/mode'
 import DashboardSlider from '@/components/modules/DashboardPage/DashboardSlider'
+import { $shoppingCart } from '@/context/shopping-cart'
 import { AnimatePresence, motion } from 'framer-motion'
 import CartAlert from '@/components/modules/DashboardPage/CartAlert'
-import { $shoppingCart } from '@/components/context/shopping-cart'
-import { $mode } from '@/components/context/mode'
-import { getBestsellersOrNewPartsFx } from '@/pages/boilerParts'
+import { getBestsellersOrNewPartsFx } from '@/pages/api/boilerParts'
 
 const DashboardPage = () => {
   const [newParts, setNewParts] = useState<IBoilerParts>({} as IBoilerParts)
@@ -20,9 +17,9 @@ const DashboardPage = () => {
     {} as IBoilerParts
   )
   const [spinner, setSpinner] = useState(false)
-  const shoppingCart = useUnit($shoppingCart)
+  const shoppingCart = useStore($shoppingCart)
   const [showAlert, setShowAlert] = useState(!!shoppingCart.length)
-  const mode = useUnit($mode)
+  const mode = useStore($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
   useEffect(() => {

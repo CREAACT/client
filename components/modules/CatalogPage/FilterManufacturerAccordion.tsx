@@ -1,13 +1,10 @@
-'use client';
-
-
-import { useUnit } from 'effector-react'
+import { useStore } from 'effector-react'
+import { $mode } from '@/context/mode'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { IFilterManufacturerAccordionProps } from '@/types/catalog'
 import Accordion from '@/components/elements/Accordion/Accordion'
 import FilterCheckboxItem from './FilterCheckboxItem'
 import styles from '@/styles/catalog/index.module.scss'
-import { $mode } from '@/components/context/mode'
 
 const FilterManufacturerAccordion = ({
   manufacturersList,
@@ -15,7 +12,7 @@ const FilterManufacturerAccordion = ({
   updateManufacturer,
   setManufacturer,
 }: IFilterManufacturerAccordionProps) => {
-  const mode = useUnit($mode)
+  const mode = useStore($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
   const isMobile = useMediaQuery(820)
 

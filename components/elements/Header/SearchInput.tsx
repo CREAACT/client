@@ -13,12 +13,12 @@ import {
 import { IBoilerPart } from '@/types/boilerparts'
 
 import styles from '@/styles/header/index.module.scss'
-import { $mode } from '@/components/context/mode'
-import { $searchInputZIndex, setSearchInputZIndex } from '@/components/context/header'
+import { $mode } from '@/context/mode'
+import { $searchInputZIndex, setSearchInputZIndex } from '@/context/header'
 import { inputStyles, controlStyles, menuStyles, optionStyles } from '@/styles/searchInput'
 import SearchSvg from '../SearchSvg/SearchSvg'
 import { useDebounceCallback } from '@/hooks/useDebounceCallback'
-import { getPartByNameFx, searchPartsFx } from '@/pages/boilerParts'
+import { getPartByNameFx, searchPartsFx } from '@/pages/api/boilerParts'
 import { NoOptionsSpinner, NoOptionsMessage } from '../SelectOptionsMessage/SelectOptionsMessage'
 
 const SearchInput = () => {

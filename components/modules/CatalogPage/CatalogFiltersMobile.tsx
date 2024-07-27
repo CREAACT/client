@@ -1,19 +1,22 @@
-'use client';
-
-
-import { useUnit } from 'effector-react'
+import { useStore } from 'effector-react'
+import { $mode } from '@/context/mode'
 import { ICatalogFilterMobileProps } from '@/types/catalog'
 import spinnerStyles from '@/styles/spinner/index.module.scss'
 import FiltersPopupTop from './FiltersPopupTop'
 import styles from '@/styles/catalog/index.module.scss'
 import FiltersPopup from './FiltersPopup'
-
+import {
+  $boilerManufacturers,
+  $partsManufacturers,
+  setBoilerManufacturers,
+  setPartsManufacturers,
+  updateBoilerManufacturer,
+  updatePartsManufacturer,
+} from '@/context/boilerParts'
 import { useState } from 'react'
 import Accordion from '@/components/elements/Accordion/Accordion'
 import PriceRange from './PriceRange'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
-import { $boilerManufacturers, $partsManufacturers, setBoilerManufacturers, setPartsManufacturers, updateBoilerManufacturer, updatePartsManufacturer } from '@/components/context/boilerParts'
-import { $mode } from '@/components/context/mode'
 
 const CatalogFiltersMobile = ({
   spinner,
@@ -26,10 +29,10 @@ const CatalogFiltersMobile = ({
   priceRange,
   setPriceRange,
 }: ICatalogFilterMobileProps) => {
-  const mode = useUnit($mode)
+  const mode = useStore($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
-  const boilerManufacturers = useUnit($boilerManufacturers)
-  const partsManufacturers = useUnit($partsManufacturers)
+  const boilerManufacturers = useStore($boilerManufacturers)
+  const partsManufacturers = useStore($partsManufacturers)
   const [openBoilers, setOpenBoilers] = useState(false)
   const [openParts, setOpenParts] = useState(false)
   const handleOpenBoilers = () => setOpenBoilers(true)

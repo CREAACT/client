@@ -1,27 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
-
-'use client';
-
-import { useUnit } from 'effector-react'
+import { useStore } from 'effector-react'
 import Link from 'next/link'
+import { $mode } from '@/context/mode'
 import { IBoilerPart } from '@/types/boilerparts'
 import { formatPrice } from '@/utils/common'
+import { $shoppingCart } from '@/context/shopping-cart'
+import CartHoverCheckedSvg from '@/components/elements/CartHoverCheckedSvg/CartHoverCheckedSvg'
+import CartHoverSvg from '@/components/elements/CartHoverSvg/CartHoverSvg'
 import spinnerStyles from '@/styles/spinner/index.module.scss'
 import { toggleCartItem } from '@/utils/shopping-cart'
+import { $user } from '@/context/user'
 import styles from '@/styles/catalog/index.module.scss'
 import { removeFromCartFx } from '@/pages/api/shopping-cart'
-import { $user } from '@/components/context/user'
-import CartHoverSvg from '@/components/elements/CartHoverSvg/CartHoverSvg'
-import { $shoppingCart } from '@/components/context/shopping-cart'
-import { $mode } from '@/components/context/mode'
-import CartHoverCheckedSvg from '@/components/elements/CartHoverCheckedSvg/CartHoverCheckedSvg'
 
 const CatalogItem = ({ item }: { item: IBoilerPart }) => {
-  const mode = useUnit($mode)
-  const user = useUnit($user)
-  const shoppingCart = useUnit($shoppingCart)
+  const mode = useStore($mode)
+  const user = useStore($user)
+  const shoppingCart = useStore($shoppingCart)
   const isInCart = shoppingCart.some((cartItem) => cartItem.partId === item.id)
-  const spinner = useUnit(removeFromCartFx.pending)
+  const spinner = useStore(removeFromCartFx.pending)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
   const toggleToCart = () => toggleCartItem(user.username, item.id, isInCart)

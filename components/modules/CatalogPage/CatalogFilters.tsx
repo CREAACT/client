@@ -1,19 +1,23 @@
-'use client';
-
-
 import { useMediaQuery } from '@/hooks/useMediaQuery'
+import CatalogFiltersDesktop from './CatalogFiltersDesktop'
 import { ICatalogFiltersProps } from '@/types/catalog'
 import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
-
-import { useUnit } from 'effector-react'
+import {
+  $boilerManufacturers,
+  $partsManufacturers,
+  setBoilerManufacturersFromQuery,
+  setPartsManufacturersFromQuery,
+} from '@/context/boilerParts'
+import { useStore } from 'effector-react'
 import { useRouter } from 'next/router'
 import { getQueryParamOnFirstRender } from '@/utils/common'
-import { checkQueryParams, updateParamsAndFiltersFromQuery, updateParamsAndFilters } from '@/utils/catalog'
-import { $boilerManufacturers, $partsManufacturers, setBoilerManufacturersFromQuery, setPartsManufacturersFromQuery } from '@/components/context/boilerParts'
-import CatalogFiltersDesktop from './CatalogFiltersDesktop'
 import CatalogFiltersMobile from './CatalogFiltersMobile'
-
+import {
+  checkQueryParams,
+  updateParamsAndFilters,
+  updateParamsAndFiltersFromQuery,
+} from '@/utils/catalog'
 
 const CatalogFilters = ({
   priceRange,
@@ -29,8 +33,8 @@ const CatalogFilters = ({
 }: ICatalogFiltersProps) => {
   const isMobile = useMediaQuery(820)
   const [spinner, setSpinner] = useState(false)
-  const boilerManufacturers = useUnit($boilerManufacturers)
-  const partsManufacturers = useUnit($partsManufacturers)
+  const boilerManufacturers = useStore($boilerManufacturers)
+  const partsManufacturers = useStore($partsManufacturers)
   const router = useRouter()
 
   useEffect(() => {

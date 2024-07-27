@@ -1,21 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
-'use client';
-
-
 import Slider from 'react-slick'
-import { useUnit } from 'effector-react'
+import { useStore } from 'effector-react'
 import { useEffect } from 'react'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import { $mode } from '@/context/mode'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import BrandsSliderNextArrow from '@/components/elements/BrandsSliderNextArrow/BrandsSliderNextArrow'
 import BrandsSliderPrevArrow from '@/components/elements/BrandsSliderPrevArrow/BrandsSliderPrevArrow'
 import styles from '@/styles/dashboard/index.module.scss'
-import { $mode } from '@/components/context/mode'
 
 const BrandsSlider = () => {
   const isMedia768 = useMediaQuery(768)
-  const mode = useUnit($mode)
+  const mode = useStore($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
   const brandItems = [

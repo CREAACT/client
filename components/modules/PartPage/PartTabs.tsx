@@ -1,16 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
-'use client';
-
-import { useUnit } from 'effector-react'
+import { useStore } from 'effector-react'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { $boilerPart } from '@/context/boilerPart'
+import { $mode } from '@/context/mode'
 import styles from '@/styles/part/index.module.scss'
-import { $boilerPart } from '@/components/context/boilerPart'
-import { $mode } from '@/components/context/mode'
 
 const PartTabs = () => {
-  const mode = useUnit($mode)
-  const boilerPart = useUnit($boilerPart)
+  const mode = useStore($mode)
+  const boilerPart = useStore($boilerPart)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
   const [showDescription, setShowDescription] = useState(true)
   const [showCompatibility, setShowCompatibility] = useState(false)

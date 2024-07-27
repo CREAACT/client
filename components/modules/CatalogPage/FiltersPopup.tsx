@@ -1,12 +1,9 @@
-'use client';
-
-
-import { useUnit } from 'effector-react'
+import { useStore } from 'effector-react'
+import { $mode } from '@/context/mode'
 import { IFiltersPopupProps } from '@/types/catalog'
+import FiltersPopupTop from './FiltersPopupTop'
 import FilterManufacturerAccordion from './FilterManufacturerAccordion'
 import styles from '@/styles/catalog/index.module.scss'
-import { $mode } from '@/components/context/mode'
-import FiltersPopupTop from './FiltersPopupTop'
 
 const FiltersPopup = ({
   resetFilterBtnDisabled,
@@ -19,7 +16,7 @@ const FiltersPopup = ({
   title,
   manufacturersList,
 }: IFiltersPopupProps) => {
-  const mode = useUnit($mode)
+  const mode = useStore($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
   return (

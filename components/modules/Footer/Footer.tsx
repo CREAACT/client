@@ -1,14 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from '@/styles/footer/index.module.scss'
-import Link from 'next/link'
-import { useMediaQuery } from '@/hooks/useMediaQuery'
 import FooterLogo from './FooterLogo'
 import OnlineStoreContent from './OnlineStoreContent'
 import CompanyContent from './CompanyContent'
-import MailSvg from '@/components/elements/MailSvg/MailSvg'
-import PhoneSvg from '@/components/elements/PhoneSvg/PhoneSvg'
-import Accordion from '@/components/elements/Accordion/Accordion'
 import MarkerSvg from '@/components/elements/MarkerSvg/MarkerSvg'
+import Link from 'next/link'
+import PhoneSvg from '@/components/elements/PhoneSvg/PhoneSvg'
+import MailSvg from '@/components/elements/MailSvg/MailSvg'
+import { useMediaQuery } from '@/hooks/useMediaQuery'
+import Accordion from '@/components/elements/Accordion/Accordion'
 
 const Footer = () => {
   const isMedia750 = useMediaQuery(750)

@@ -1,40 +1,40 @@
-'use client';
-
-
-import { useUnit } from 'effector-react'
+import { useStore } from 'effector-react'
 import { toast } from 'react-toastify'
 import { useEffect } from 'react'
+import { $boilerPart } from '@/context/boilerPart'
+import { $mode } from '@/context/mode'
 import PartImagesList from '@/components/modules/PartPage/PartImagesList'
 import { formatPrice } from '@/utils/common'
+import { $shoppingCart } from '@/context/shopping-cart'
 import CartHoverCheckedSvg from '@/components/elements/CartHoverCheckedSvg/CartHoverCheckedSvg'
 import CartHoverSvg from '@/components/elements/CartHoverSvg/CartHoverSvg'
 import spinnerStyles from '@/styles/spinner/index.module.scss'
 import { toggleCartItem } from '@/utils/shopping-cart'
+import { $user } from '@/context/user'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import PartTabs from '@/components/modules/PartPage/PartTabs'
 import DashboardSlider from '@/components/modules/DashboardPage/DashboardSlider'
-
+import {
+  $boilerParts,
+  setBoilerParts,
+  setBoilerPartsByPopularity,
+} from '@/context/boilerParts'
 import PartAccordion from '@/components/modules/PartPage/PartAccordion'
 import styles from '@/styles/part/index.module.scss'
-import { $boilerPart } from '@/components/context/boilerPart'
-import { $boilerParts, setBoilerParts, setBoilerPartsByPopularity } from '@/components/context/boilerParts'
-import { $mode } from '@/components/context/mode'
-import { $shoppingCart } from '@/components/context/shopping-cart'
-import { $user } from '@/components/context/user'
 import { removeFromCartFx } from '@/pages/api/shopping-cart'
-import { getBoilerPartsFx } from '@/pages/boilerParts'
+import { getBoilerPartsFx } from '@/pages/api/boilerParts'
 
 const PartPage = () => {
-  const mode = useUnit($mode)
-  const user = useUnit($user)
+  const mode = useStore($mode)
+  const user = useStore($user)
   const isMobile = useMediaQuery(850)
-  const boilerPart = useUnit($boilerPart)
-  const boilerParts = useUnit($boilerParts)
-  const cartItems = useUnit($shoppingCart)
+  const boilerPart = useStore($boilerPart)
+  const boilerParts = useStore($boilerParts)
+  const cartItems = useStore($shoppingCart)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
   const isInCart = cartItems.some((item) => item.partId === boilerPart.id)
-  const spinnerToggleCart = useUnit(removeFromCartFx.pending)
-  const spinnerSlider = useUnit(getBoilerPartsFx.pending)
+  const spinnerToggleCart = useStore(removeFromCartFx.pending)
+  const spinnerSlider = useStore(getBoilerPartsFx.pending)
 
   useEffect(() => {
     loadBoilerPart()

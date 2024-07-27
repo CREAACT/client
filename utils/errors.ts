@@ -1,6 +1,6 @@
-import { HTTPStatus } from '@/constans'
 import { AxiosError } from 'axios'
 import { toast } from 'react-toastify'
+import { HTTPStatus } from '@/constans'
 
 export const showAuthError = (error: unknown) => {
   const axiosError = error as AxiosError

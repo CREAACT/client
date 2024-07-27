@@ -1,5 +1,3 @@
-'use client';
-
 import { IShoppingCartItem } from '@/types/shopping-cart'
 import { createDomain } from 'effector-next'
 

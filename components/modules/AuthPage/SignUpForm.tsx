@@ -1,18 +1,15 @@
-'use client';
-
-
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
+import { useStore } from 'effector-react'
 import NameInput from '@/components/elements/AuthPage/NameInput'
 import { IInputs } from '@/types/auth'
+import { $mode } from '@/context/mode'
 import EmailInput from '@/components/elements/AuthPage/EmailInput'
 import PasswordInput from '@/components/elements/AuthPage/PasswordInput'
 import { showAuthError } from '@/utils/errors'
 import styles from '@/styles/auth/index.module.scss'
 import spinnerStyles from '@/styles/spinner/index.module.scss'
-import { $mode } from '@/components/context/mode'
 import { singUpFx } from '@/pages/api/auth'
-import { useUnit } from 'effector-react'
 
 const SignUpForm = ({ switchForm }: { switchForm: () => void }) => {
   const [spinner, setSpinner] = useState(false)
@@ -22,7 +19,7 @@ const SignUpForm = ({ switchForm }: { switchForm: () => void }) => {
     handleSubmit,
     resetField,
   } = useForm<IInputs>()
-  const mode = useUnit($mode)
+  const mode = useStore($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
   const onSubmit = async (data: IInputs) => {

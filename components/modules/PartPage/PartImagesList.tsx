@@ -1,17 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
-
-'use client';
-
-import { useUnit } from 'effector-react'
+import { useStore } from 'effector-react'
 import { useState } from 'react'
+import { $boilerPart } from '@/context/boilerPart'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import PartImagesItem from './PartImagesItem'
-import styles from '@/styles/part/index.module.scss'
-import { $boilerPart } from '@/components/context/boilerPart'
 import PartSlider from './PartSlider'
+import styles from '@/styles/part/index.module.scss'
 
 const PartImagesList = () => {
-  const boilerPart = useUnit($boilerPart)
+  const boilerPart = useStore($boilerPart)
   const isMobile = useMediaQuery(850)
   const images = boilerPart.images
     ? (JSON.parse(boilerPart.images) as string[])

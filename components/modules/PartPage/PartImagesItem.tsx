@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import styles from '@/styles/part/index.module.scss'
 import { IPartImagesItemProps } from '@/types/part'
+import styles from '@/styles/part/index.module.scss'
 
 const PartImagesItem = ({ src, callback, alt }: IPartImagesItemProps) => {
   const changeMainImage = () => callback(src)

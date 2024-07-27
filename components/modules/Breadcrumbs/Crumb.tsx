@@ -1,13 +1,10 @@
-'use client';
-
-
 import { useEffect, useState } from 'react'
-import { useUnit } from 'effector-react'
+import { useStore } from 'effector-react'
 import Link from 'next/link'
-import { ICrumbProps } from '@/types/common'
-import styles from '@/styles/breadcrumbs/index.module.scss'
-import { $mode } from '@/components/context/mode'
 import CrumbArrowSvg from '@/components/elements/CrumbArrowSvg/CrumbArrowSvg'
+import { ICrumbProps } from '@/types/common'
+import { $mode } from '@/context/mode'
+import styles from '@/styles/breadcrumbs/index.module.scss'
 
 const Crumb = ({
   text: defaultText,
@@ -16,7 +13,7 @@ const Crumb = ({
   last = false,
 }: ICrumbProps) => {
   const [text, setText] = useState(defaultText)
-  const mode = useUnit($mode)
+  const mode = useStore($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
   useEffect(() => {

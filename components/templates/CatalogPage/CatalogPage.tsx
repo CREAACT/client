@@ -1,11 +1,19 @@
-'use client';
-
-
 import FilterSelect from '@/components/modules/CatalogPage/FilterSelect'
 import ManufacturersBlock from '@/components/modules/CatalogPage/ManufacturersBlock'
-
+import {
+  $boilerManufacturers,
+  $boilerParts,
+  $filteredBoilerParts,
+  $partsManufacturers,
+  setBoilerManufacturers,
+  setBoilerParts,
+  setPartsManufacturers,
+  updateBoilerManufacturer,
+  updatePartsManufacturer,
+} from '@/context/boilerParts'
+import { $mode } from '@/context/mode'
 import styles from '@/styles/catalog/index.module.scss'
-import { useUnit } from 'effector-react'
+import { useStore } from 'effector-react'
 import { AnimatePresence } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
@@ -18,17 +26,15 @@ import { IBoilerParts } from '@/types/boilerparts'
 import CatalogFilters from '@/components/modules/CatalogPage/CatalogFilters'
 import { usePopup } from '@/hooks/usePoup'
 import { checkQueryParams } from '@/utils/catalog'
-import { getBoilerPartsFx } from '@/pages/boilerParts'
-import { $boilerManufacturers, $partsManufacturers, $filteredBoilerParts, $boilerParts, setBoilerParts, setBoilerManufacturers, setPartsManufacturers, updateBoilerManufacturer, updatePartsManufacturer } from '@/components/context/boilerParts'
-import { $mode } from '@/components/context/mode'
 import FilterSvg from '@/components/elements/FilterSvg/FilterSvg'
+import { getBoilerPartsFx } from '@/pages/api/boilerParts'
 
 const CatalogPage = ({ query }: { query: IQueryParams }) => {
-  const mode = useUnit($mode)
-  const boilerManufacturers = useUnit($boilerManufacturers)
-  const partsManufacturers = useUnit($partsManufacturers)
-  const filteredBoilerParts = useUnit($filteredBoilerParts)
-  const boilerParts = useUnit($boilerParts)
+  const mode = useStore($mode)
+  const boilerManufacturers = useStore($boilerManufacturers)
+  const partsManufacturers = useStore($partsManufacturers)
+  const filteredBoilerParts = useStore($filteredBoilerParts)
+  const boilerParts = useStore($boilerParts)
   const [spinner, setSpinner] = useState(false)
   const [priceRange, setPriceRange] = useState([1000, 9000])
   const [isFilterInQuery, setIsFilterInQuery] = useState(false)

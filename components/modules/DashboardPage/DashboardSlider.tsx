@@ -1,19 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
-
-'use client';
-
 import Slider from 'react-slick'
-import { useUnit } from 'effector-react'
+import { useStore } from 'effector-react'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import Link from 'next/link'
 import { useEffect } from 'react'
+import { $mode } from '@/context/mode'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
+import { IDashboardSlider } from '@/types/dashboard'
 import skeletonStyles from '@/styles/skeleton/index.module.scss'
 import { formatPrice } from '@/utils/common'
 import styles from '@/styles/dashboard/index.module.scss'
-import { $mode } from '@/components/context/mode'
-import { IDashboardSlider } from '@/types/dashboard'
 
 const DashboardSlider = ({
   items,
@@ -24,7 +21,7 @@ const DashboardSlider = ({
   const isMedia1366 = useMediaQuery(1366)
   const isMedia800 = useMediaQuery(800)
   const isMedia560 = useMediaQuery(560)
-  const mode = useUnit($mode)
+  const mode = useStore($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
   useEffect(() => {

@@ -1,30 +1,32 @@
-'use client';
-
-
-import { useUnit } from 'effector-react'
+import { useStore } from 'effector-react'
 import { forwardRef, useEffect } from 'react'
 import Link from 'next/link'
 import { toast } from 'react-toastify'
 import { AnimatePresence, motion } from 'framer-motion'
+import { $mode } from '@/context/mode'
 import { IWrappedComponentProps } from '@/types/common'
 import { withClickOutside } from '@/utils/withClickOutside'
-
+import ShoppingCartSvg from '@/components/elements/ShoppingCartSvg/ShoppingCartSvg'
+import {
+  $disableCart,
+  $shoppingCart,
+  $totalPrice,
+  setShoppingCart,
+  setTotalPrice,
+} from '@/context/shopping-cart'
+import CartPopupItem from './CartPopupItem'
+import { $user } from '@/context/user'
 import styles from '@/styles/cartPopup/index.module.scss'
 import { formatPrice } from '@/utils/common'
-import { $mode } from '@/components/context/mode'
-import { $totalPrice, $disableCart, $shoppingCart, setTotalPrice, setShoppingCart } from '@/components/context/shopping-cart'
-import { $user } from '@/components/context/user'
-import CartPopupItem from './CartPopupItem'
 import { getCartItemsFx } from '@/pages/api/shopping-cart'
-import ShoppingCartSvg from '@/components/elements/ShoppingCartSvg/ShoppingCartSvg'
 
 const CartPopup = forwardRef<HTMLDivElement, IWrappedComponentProps>(
   ({ open, setOpen }, ref) => {
-    const mode = useUnit($mode)
-    const user = useUnit($user)
-    const totalPrice = useUnit($totalPrice)
-    const disableCart = useUnit($disableCart)
-    const shoppingCart = useUnit($shoppingCart)
+    const mode = useStore($mode)
+    const user = useStore($user)
+    const totalPrice = useStore($totalPrice)
+    const disableCart = useStore($disableCart)
+    const shoppingCart = useStore($shoppingCart)
     const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
     const toggleCartDropDown = () => {

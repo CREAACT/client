@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Layout from '@/components/layout/Layout'
-import useRedirectByUserCheck from '@/hooks/useRedirectByUserCheck'
 import DashboardPage from '@/components/templates/DashboardPage/DashboardPage'
+import useRedirectByUserCheck from '@/hooks/useRedirectByUserCheck'
 import Breadcrumbs from '@/components/modules/Breadcrumbs/Breadcrumbs'
 
 function Dashboard() {

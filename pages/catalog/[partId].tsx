@@ -1,23 +1,20 @@
-'use client';
-
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { toast } from 'react-toastify'
-import { useCallback, useEffect, useState, } from 'react'
-import { useUnit } from 'effector-react'
-
+import { useCallback, useEffect, useState } from 'react'
+import { useStore } from 'effector-react'
 import Layout from '@/components/layout/Layout'
 import useRedirectByUserCheck from '@/hooks/useRedirectByUserCheck'
 import { IQueryParams } from '@/types/catalog'
-import Breadcrumbs from '@/components/modules/Breadcrumbs/Breadcrumbs'
-import { getBoilerPartFx } from '../boilerParts'
-import { $boilerPart, setBoilerPart } from '@/components/context/boilerPart'
+import PartPage from '@/components/templates/PartPage/PartPage'
 import Custom404 from '../404'
-import PartPage from '@/components/templates/CatalogPage/PartPage'
+import Breadcrumbs from '@/components/modules/Breadcrumbs/Breadcrumbs'
+import { getBoilerPartFx } from '../api/boilerParts'
+import { $boilerPart, setBoilerPart } from '@/context/boilerPart'
 
 function CatalogPartPage({ query }: { query: IQueryParams }) {
   const { shouldLoadContent } = useRedirectByUserCheck()
-  const boilerPart = useUnit($boilerPart)
+  const boilerPart = useStore($boilerPart)
   const [error, setError] = useState(false)
   const router = useRouter()
   const getDefaultTextGenerator = useCallback(
@@ -25,12 +22,8 @@ function CatalogPartPage({ query }: { query: IQueryParams }) {
     []
   )
   const getTextGenerator = useCallback((param: string) => ({}[param]), [])
-  const [lastCrumb, setLastCrumb] = useState<HTMLElement | null>(null)
+  const lastCrumb = document.querySelector('.last-crumb') as HTMLElement
 
-  useEffect(() => {
-    const element = document.querySelector('.last-crumb') as HTMLElement
-    setLastCrumb(element)
-  }, []) 
   useEffect(() => {
     loadBoilerPart()
   }, [router.asPath])

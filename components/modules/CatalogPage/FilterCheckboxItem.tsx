@@ -4,7 +4,7 @@
 import { IFilterCheckboxItem } from '@/types/catalog'
 import { useUnit } from 'effector-react'
 import styles from '@/styles/catalog/index.module.scss'
-import { $mode } from '@/components/context/mode'
+import { $mode } from '@/context/mode'
 
 const FilterCheckboxItem = ({
   title,

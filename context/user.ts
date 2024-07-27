@@ -1,7 +1,5 @@
-
-
-import { IUser } from '@/types/auth';
-import { createDomain } from 'effector-next';
+import { IUser } from '@/types/auth'
+import { createDomain } from 'effector-next'
 
 const user = createDomain()
 

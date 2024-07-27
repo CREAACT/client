@@ -1,31 +1,32 @@
-'use client';
-
-
-import { useUnit } from 'effector-react'
+import { useStore } from 'effector-react'
 import { toast } from 'react-toastify'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-
+import {
+  $shoppingCart,
+  $totalPrice,
+  setShoppingCart,
+} from '@/context/shopping-cart'
 import { formatPrice } from '@/utils/common'
+import OrderAccordion from '@/components/modules/OrderPage/OrderAccordion'
+import { $mode } from '@/context/mode'
+
+import { $user, $userCity } from '@/context/user'
 import styles from '@/styles/order/index.module.scss'
 import spinnerStyles from '@/styles/spinner/index.module.scss'
-import { $shoppingCart, $totalPrice, setShoppingCart } from '@/components/context/shopping-cart'
-import { $user, $userCity } from '@/components/context/user'
+import { makePaymentFx, checkPaymentFx } from '@/pages/api/payment'
 import { removeFromCartFx } from '@/pages/api/shopping-cart'
-import { $mode } from '@/components/context/mode'
-import OrderAccordion from '@/components/modules/OrderPage/OrderAccordion'
-import { checkPaymentFx, makePaymentFx } from '@/pages/api/payment'
 
 const OrderPage = () => {
-  const mode = useUnit($mode)
-  const user = useUnit($user)
-  const userCity = useUnit($userCity)
-  const shoppingCart = useUnit($shoppingCart)
-  const totalPrice = useUnit($totalPrice)
+  const mode = useStore($mode)
+  const user = useStore($user)
+  const userCity = useStore($userCity)
+  const shoppingCart = useStore($shoppingCart)
+  const totalPrice = useStore($totalPrice)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
   const [orderIsReady, setOrderIsReady] = useState(false)
   const [agreement, setAgreement] = useState(false)
-  const spinner = useUnit(makePaymentFx.pending)
+  const spinner = useStore(makePaymentFx.pending)
   const router = useRouter()
 
   const handleAgreementChange = () => setAgreement(!agreement)

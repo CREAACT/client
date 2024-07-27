@@ -1,8 +1,7 @@
-'use client';
 
-import { setUser } from '@/components/context/user'
-import { checkUserAuthFx } from '@/pages/api/auth';
-import { useRouter } from 'next/navigation'
+import { setUser } from '@/context/user'
+import { checkUserAuthFx } from '@/pages/api/auth'
+import { useRouter } from 'next/router'
 import { useEffect, useRef, useState } from 'react'
 
 const useRedirectByUserCheck = (isAuthPage = false) => {

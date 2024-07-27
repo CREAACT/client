@@ -1,12 +1,9 @@
-'use client';
-
-
 import { useEffect, useState } from 'react'
 import {
   removeClassNamesForOverlayAndBody,
   toggleClassNamesForOverlayAndBody,
 } from '@/utils/common'
-import { setSearchInputZIndex } from '@/components/context/header'
+import { setSearchInputZIndex } from '@/context/header'
 
 export const usePopup = () => {
   const [open, setOpen] = useState(false)

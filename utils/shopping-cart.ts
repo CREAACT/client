@@ -1,8 +1,7 @@
+import { removeShoppingCartItem, updateShoppingCart, updateCartItemTotalPrice } from '@/context/shopping-cart'
+import { removeFromCartFx, addToCartFx, updateCartItemFx } from '@/pages/api/shopping-cart'
 import { toast } from 'react-toastify'
 
-
-import { removeFromCartFx, addToCartFx, updateCartItemFx } from '@/pages/api/shopping-cart'
-import { removeShoppingCartItem, updateShoppingCart, updateCartItemTotalPrice } from '@/components/context/shopping-cart'
 
 export const toggleCartItem = async (
   username: string,

@@ -1,23 +1,20 @@
-'use client';
-
-
-import { useUnit } from 'effector-react'
+import { useStore } from 'effector-react'
 import { forwardRef } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import ProfileSvg from '@/components/elements/ProfileSvg/ProfileSvg'
+import { $mode } from '@/context/mode'
+import { IWrappedComponentProps } from '../../../types/common'
+import LogoutSvg from '@/components/elements/LogoutSvg/LogoutSvg'
 import { withClickOutside } from '../../../utils/withClickOutside'
 import styles from '@/styles/profileDropDown/index.module.scss'
+import { $user } from '@/context/user'
 import { useRouter } from 'next/router'
 import { logoutFx } from '@/pages/api/auth'
-import { $user } from '@/components/context/user'
-import LogoutSvg from '@/components/elements/LogoutSvg/LogoutSvg'
-import { IWrappedComponentProps } from '@/types/common'
-import { $mode } from '@/components/context/mode'
-import ProfileSvg from '@/components/elements/ProfileSvg/ProfileSvg'
 
 const ProfileDropDown = forwardRef<HTMLDivElement, IWrappedComponentProps>(
   ({ open, setOpen }, ref) => {
-    const mode = useUnit($mode)
-    const user = useUnit($user)
+    const mode = useStore($mode)
+    const user = useStore($user)
     const router = useRouter()
     const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 

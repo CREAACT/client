@@ -1,25 +1,22 @@
-'use client';
-
-
-import { useUnit } from 'effector-react'
+import { useStore } from 'effector-react'
 import { motion } from 'framer-motion'
+import { $mode } from '@/context/mode'
 import {
   IFilterCheckboxItem,
   IManufacturersBlockItemProps,
 } from '@/types/catalog'
 import DeleteSvg from '@/components/elements/DeleteSvg/DeleteSvg'
 import styles from '@/styles/catalog/index.module.scss'
-import { $mode } from '@/components/context/mode'
 
 const ManufacturersBlockItem = ({
   item,
   event,
 }: IManufacturersBlockItemProps) => {
-  const mode = useUnit($mode)
+  const mode = useStore($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
   const removeFilter = () =>
-    ({ checked: !item.checked, id: item.id } as IFilterCheckboxItem)
+    event({ checked: !item.checked, id: item.id } as IFilterCheckboxItem)
 
   return (
     <motion.li

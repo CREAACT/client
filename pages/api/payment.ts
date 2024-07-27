@@ -1,7 +1,5 @@
-'use client';
-
-import { createEffect } from 'effector'
-import api from '../axiosClient'
+import { createEffect } from 'effector-next'
+import api from './axiosClient'
 import { ICheckPayFx, IMakePayFx } from '@/types/order'
 
 export const makePaymentFx = createEffect(

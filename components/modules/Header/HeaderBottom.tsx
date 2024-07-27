@@ -1,22 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
-
-'use client';
-
-import { useUnit } from 'effector-react'
+import { useStore } from 'effector-react'
 import Link from 'next/link'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
-import ModeToggler from '@/components/elements/ModeToggler/ModeToggler'
-import { useMediaQuery } from '@/hooks/useMediaQuery'
-import styles from '@/styles/header/index.module.scss'
-import { $mode } from '@/components/context/mode'
+import { $mode } from '@/context/mode'
 import SearchInput from '@/components/elements/Header/SearchInput'
+import ModeToggler from '@/components/elements/ModeToggler/ModeToggler'
 import CartPopup from './CartPopup/CartPopup'
-import { setDisableCart } from '@/components/context/shopping-cart'
+import { useMediaQuery } from '@/hooks/useMediaQuery'
+import { setDisableCart } from '@/context/shopping-cart'
+import styles from '@/styles/header/index.module.scss'
 
 const HeaderBottom = () => {
   const isMedia950 = useMediaQuery(950)
-  const mode = useUnit($mode)
+  const mode = useStore($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
   const router = useRouter()
 

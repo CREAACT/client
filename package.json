@@ -17,6 +17,7 @@
     "effector-react": "^23.2.1",
     "framer-motion": "^11.3.13",
     "next": "14.2.4",
+    "nextjs-progressbar": "^0.0.16",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.52.1",

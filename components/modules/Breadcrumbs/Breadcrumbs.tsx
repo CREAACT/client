@@ -1,15 +1,12 @@
 /* eslint-disable max-len */
-'use client';
-
-
-import { useUnit } from 'effector-react'
+import { useStore } from 'effector-react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { ParsedUrlQuery } from 'querystring'
 import { useMemo } from 'react'
+import { $mode } from '@/context/mode'
 import Crumb from './Crumb'
 import styles from '@/styles/breadcrumbs/index.module.scss'
-import { $mode } from '@/components/context/mode'
 
 const generatePathParts = (pathStr: string) => {
   const pathWithoutQuery = pathStr.split('?')[0]
@@ -24,7 +21,7 @@ const Breadcrumbs = ({
   getDefaultTextGenerator: (arg0: string, href: string) => string
 }) => {
   const router = useRouter()
-  const mode = useUnit($mode)
+  const mode = useStore($mode)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
   const breadcrumbs = useMemo(

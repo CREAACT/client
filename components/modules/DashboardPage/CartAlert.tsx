@@ -1,16 +1,14 @@
-'use client';
-
 import Link from 'next/link'
-import { useUnit } from 'effector-react'
+import { useStore } from 'effector-react'
 import { formatPrice } from '@/utils/common'
+import { ICartAlertProps } from '../../../types/dashboard'
+import { $mode } from '@/context/mode'
+import { $totalPrice } from '@/context/shopping-cart'
 import styles from '@/styles/dashboard/index.module.scss'
-import { ICartAlertProps } from '@/types/dashboard'
-import { $mode } from '@/components/context/mode'
-import { $totalPrice } from '@/components/context/shopping-cart'
 
 const CartAlert = ({ count, closeAlert }: ICartAlertProps) => {
-  const mode = useUnit($mode)
-  const totalPrice = useUnit($totalPrice)
+  const mode = useStore($mode)
+  const totalPrice = useStore($totalPrice)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
 
   const showCountMessage = (count: string) => {

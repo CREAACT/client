@@ -1,27 +1,24 @@
-'use client';
-
-
-import { useUnit } from 'effector-react'
+import { useStore } from 'effector-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
+import { $mode } from '@/context/mode'
+import { $shoppingCart, $totalPrice } from '@/context/shopping-cart'
+import { IOrderAccordionProps } from '@/types/order'
+import DoneSvg from '@/components/elements/DoneSvg/DoneSvg'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
+import EditSvg from '@/components/elements/EditSvg/EditSvg'
 import CartPopupItem from '../Header/CartPopup/CartPopupItem'
+import OrderItem from './OrderItem'
 import { formatPrice } from '@/utils/common'
 import styles from '@/styles/order/index.module.scss'
-import { $mode } from '@/components/context/mode'
-import OrderItem from './OrderItem'
-import { IOrderAccordionProps } from '@/types/order'
-import { $shoppingCart, $totalPrice } from '@/components/context/shopping-cart'
-import EditSvg from '@/components/elements/EditSvg/EditSvg'
-import DoneSvg from '@/components/elements/DoneSvg/DoneSvg'
 
 const OrderAccordion = ({
   setOrderIsReady,
   showDoneIcon,
 }: IOrderAccordionProps) => {
-  const mode = useUnit($mode)
-  const shoppingCart = useUnit($shoppingCart)
-  const totalPrice = useUnit($totalPrice)
+  const mode = useStore($mode)
+  const shoppingCart = useStore($shoppingCart)
+  const totalPrice = useStore($totalPrice)
   const darkModeClass = mode === 'dark' ? `${styles.dark_mode}` : ''
   const isMedia550 = useMediaQuery(550)
   const [expanded, setExpanded] = useState(true)
