@@ -1,3 +1,5 @@
+'use client';
+
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import CatalogFiltersDesktop from './CatalogFiltersDesktop'
 import { ICatalogFiltersProps } from '@/types/catalog'
