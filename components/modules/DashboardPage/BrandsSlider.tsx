@@ -1,4 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
+
+"use client"
+
 import Slider from 'react-slick'
 import { useUnit } from 'effector-react'
 import { useEffect } from 'react'

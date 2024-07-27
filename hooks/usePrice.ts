@@ -1,3 +1,6 @@
+"use client"
+
+
 import { useUnit } from 'effector-react'
 import { useEffect, useState } from 'react'
 import { removeItemFromCart, updateTotalPrice } from '@/utils/shopping-cart'

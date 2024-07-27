@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+"use client"
+
 import { useUnit } from 'effector-react'
 import { $mode } from '@/context/mode'
 import styles from '@/styles/about/index.module.scss'

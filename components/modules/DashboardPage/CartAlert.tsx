@@ -1,3 +1,6 @@
+"use client"
+
+
 import Link from 'next/link'
 import { useUnit } from 'effector-react'
 import { formatPrice } from '@/utils/common'

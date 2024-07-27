@@ -1,3 +1,6 @@
+"use client"
+
+
 import { useUnit } from 'effector-react'
 import { motion } from 'framer-motion'
 import { $mode } from '@/context/mode'

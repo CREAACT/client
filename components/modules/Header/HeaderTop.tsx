@@ -1,3 +1,6 @@
+"use client"
+
+
 import Link from 'next/link'
 import { useUnit } from 'effector-react'
 import CityButton from '@/components/elements/CityButton/CityButton'

@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+"use client"
+
 import { useUnit } from 'effector-react'
 import { useState } from 'react'
 import { $boilerPart } from '@/context/boilerPart'

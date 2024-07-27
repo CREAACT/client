@@ -1,3 +1,6 @@
+"use client"
+
+
 import { useUnit } from 'effector-react'
 import { toast } from 'react-toastify'
 import { useRouter } from 'next/router'

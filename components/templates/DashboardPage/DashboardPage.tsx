@@ -1,3 +1,6 @@
+"use client"
+
+
 import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
 import BrandsSlider from '@/components/modules/DashboardPage/BrandsSlider'

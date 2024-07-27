@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+"use client"
+
 import { useUnit } from 'effector-react'
 import Accordion from '@/components/elements/Accordion/Accordion'
 import { $mode } from '@/context/mode'

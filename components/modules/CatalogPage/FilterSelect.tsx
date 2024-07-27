@@ -1,4 +1,7 @@
 /* eslint-disable indent */
+"use client"
+
+
 import { useUnit } from 'effector-react'
 import { useEffect, useState } from 'react'
 import Select from 'react-select'

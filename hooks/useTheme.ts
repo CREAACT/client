@@ -1,3 +1,6 @@
+"use client"
+
+
 import { $mode, setMode } from '@/context/mode'
 import { useUnit } from 'effector-react'
 import { useEffect } from 'react'

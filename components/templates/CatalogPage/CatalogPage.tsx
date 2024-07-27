@@ -1,3 +1,6 @@
+"use client"
+
+
 import FilterSelect from '@/components/modules/CatalogPage/FilterSelect'
 import ManufacturersBlock from '@/components/modules/CatalogPage/ManufacturersBlock'
 import {

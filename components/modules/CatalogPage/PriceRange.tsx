@@ -1,3 +1,6 @@
+"use client"
+
+
 import { $mode } from '@/context/mode'
 import { useUnit } from 'effector-react'
 import { Range, getTrackBackground } from 'react-range'
